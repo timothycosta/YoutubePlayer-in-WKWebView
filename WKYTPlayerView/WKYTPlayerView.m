@@ -1091,6 +1091,10 @@ NSString static *const kWKYTPlayerSyndicationRegexPattern = @"^https://tpc.googl
     
     configuration.allowsInlineMediaPlayback = YES;
     configuration.mediaPlaybackRequiresUserAction = NO;
+
+    if ([self.delegate respondsToSelector:@selector(playerView:modifyConfiguration:)]) {
+        [self.delegate playerView:self modifyConfiguration:configuration];
+    }
     
     WKWebView *webView = [[WKWebView alloc] initWithFrame:self.bounds configuration:configuration];
     webView.scrollView.scrollEnabled = NO;

@@ -137,6 +137,14 @@ typedef NS_ENUM(NSInteger, WKYTPlayerError) {
  */
 - (void)playerViewIframeAPIDidFailedToLoad:(nonnull WKYTPlayerView *)playerView;
 
+/**
+ * Allows the WKWebViewConfiguration to be modified before the webview is created
+ *  @param playerView The WKYTPlayerView instance where the webview will be created
+ *  @param configuration the WKWebViewConfiguration that will be used
+ */
+- (void)playerView:(nonnull WKYTPlayerView *)playerView modifyConfiguration:(nonnull WKWebViewConfiguration*)configuration;
+
+
 @end
 
 /**
